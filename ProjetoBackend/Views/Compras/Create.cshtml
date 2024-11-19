@@ -30,7 +30,7 @@
     <div class="row mb-3">
         <div class="col-md-6">
             <label asp-for="ValorTotal" class="form-label fw-bold text-muted">Valor Total</label>
-            <input asp-for="ValorTotal" class="form-control" placeholder="Digite o valor" />
+            <input asp-for="ValorTotal" class="form-control" />
             <span asp-validation-for="ValorTotal" class="text-danger"></span>
         </div>
         <div class="col-md-6 d-flex align-items-end">
@@ -38,6 +38,8 @@
         </div>
     </div>
 </form>
+
+<!--
 
 <div class="text-center mt-4">
 </div>
@@ -48,3 +50,4 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+-->

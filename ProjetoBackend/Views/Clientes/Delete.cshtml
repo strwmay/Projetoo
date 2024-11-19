@@ -18,7 +18,7 @@
         <hr class="my-2" style="width: 50%; margin-left: 0;">
 
         <dt class="col-12 text-uppercase text-pink mb-1">E-mail</dt>
-        <dd class="col-12 mb-3">@Html.DisplayFor(model => model.Email)</dd>
+        <dd class="col-12 mb-3"><a class="linkEmail">@Model.Email</a></dd>
         <hr class="my-2" style="width: 50%; margin-left: 0;">
 
         <dt class="col-12 text-uppercase text-pink mb-1">CPF</dt>
@@ -36,7 +36,7 @@
     <div class="d-flex flex-column align-items-start mt-4" style="width: 50%;">
         <form asp-action="Delete" class="w-100">
             <input type="hidden" asp-for="ClienteId" />
-            <button type="submit" class="btn btn-danger w-50" style="background-color: #f8a1b0; border-color: #f8a1b0; font-size: 1rem; padding: 0.5rem 0;">DELETAR</button>
+            <button type="submit" class="btn btn-primary w-100 fw-bold text-uppercase" style="font-size: 1rem; padding: 0.5rem 0;">DELETAR</button>
         </form>
         <span class="text-muted small mt-2">*Ao executar essa ação não será possível revertê-la</span>
     </div>

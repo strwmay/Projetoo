@@ -115,13 +115,13 @@ nav, footer {
     }
 
 
-        .table tbody td a {
+        .table tbody td a, .linkEmail {
             color: #ffb6c1;
             text-decoration: none;
             margin: 0 4px;
         }
 
-            .table tbody td a:hover {
+            .table tbody td a:hover, .linkEmail:hover {
                 color: #ff7f96;
                 text-decoration: underline;
             }
@@ -140,3 +140,28 @@ nav, footer {
     .table tbody tr:hover {
         background-color: #ffeff2;
     }
+
+.btn-primary {
+    --bs-btn-color: #FFF5F8;
+    --bs-btn-bg: #FDBACD;
+    --bs-btn-border-color: #FDBACD;
+    --bs-btn-hover-color: #FFF5F8;
+    --bs-btn-hover-bg: #fbaac1;
+    --bs-btn-hover-border-color: #fbaac1;
+    --bs-btn-focus-shadow-rgb: #fbaac1;
+    --bs-btn-active-color: #FFF5F8;
+    --bs-btn-active-bg: #FDBACD;
+    --bs-btn-active-border-color: #fbaac1;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.form-control, .form-control:focus {
+    color: #3A2727;
+    background-color: #fff5f8;
+    background-clip: padding-box;
+    border: solid #FDBACD;
+}
+
+.text-muted {
+    color: #FDBACD !important;
+}

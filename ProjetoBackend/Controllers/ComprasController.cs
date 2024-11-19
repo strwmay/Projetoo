@@ -16,11 +16,10 @@ namespace ProjetoBackend.Controllers
         }
 
         // GET: Compras
-
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Compras.Include(v => v.Fornecedor);
-            return View(await _context.Compras.ToListAsync());
+            var applicationDbContext = _context.Compras.Include(c => c.Fornecedor);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Compras/Details/5
@@ -32,8 +31,8 @@ namespace ProjetoBackend.Controllers
             }
 
             var compra = await _context.Compras
-                .Include(v => v.Fornecedor)
-            .FirstOrDefaultAsync(m => m.CompraId == id);
+                .Include(c => c.Fornecedor)
+                .FirstOrDefaultAsync(m => m.CompraId == id);
             if (compra == null)
             {
                 return NotFound();
@@ -45,7 +44,7 @@ namespace ProjetoBackend.Controllers
         // GET: Compras/Create
         public IActionResult Create()
         {
-            ViewData["FornecedorId"] = new SelectList(_context.Fornecedores, "FornecedorId", "Fornecedor");
+            ViewData["FornecedorId"] = new SelectList(_context.Fornecedores, "FornecedorId", "Nome");
             return View();
         }
 
@@ -63,6 +62,7 @@ namespace ProjetoBackend.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["FornecedorId"] = new SelectList(_context.Fornecedores, "FornecedorId", "Nome", compra.FornecedorId);
             return View(compra);
         }
 
@@ -79,6 +79,7 @@ namespace ProjetoBackend.Controllers
             {
                 return NotFound();
             }
+            ViewData["FornecedorId"] = new SelectList(_context.Fornecedores, "FornecedorId", "Celular", compra.FornecedorId);
             return View(compra);
         }
 
@@ -114,6 +115,7 @@ namespace ProjetoBackend.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["FornecedorId"] = new SelectList(_context.Fornecedores, "FornecedorId", "Celular", compra.FornecedorId);
             return View(compra);
         }
 
@@ -126,6 +128,7 @@ namespace ProjetoBackend.Controllers
             }
 
             var compra = await _context.Compras
+                .Include(c => c.Fornecedor)
                 .FirstOrDefaultAsync(m => m.CompraId == id);
             if (compra == null)
             {

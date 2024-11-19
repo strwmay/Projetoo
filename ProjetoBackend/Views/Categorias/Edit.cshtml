@@ -15,10 +15,13 @@
     <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
     <input type="hidden" asp-for="CategoriaId" />
     <div class="row mb-3">
-        <div class="col-12">
+        <div class="col-8">
             <label asp-for="Nome" class="form-label fw-bold text-muted">Nome</label>
             <input asp-for="Nome" class="form-control" placeholder="Digite o nome" />
             <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100 fw-bold text-uppercase">Confirmar</button>
         </div>
     </div>
 </form>

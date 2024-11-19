@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<ProjetoBackend.Models.Compra>
 
 @{
-    ViewData["Title"] = "Compras";
+    ViewData["Title"] = "Index";
 }
 
 <div class="search-container">
     <h1>COMPRAS</h1>
     <form asp-action="Search" method="get" class="search-form">
-        <input type="text" name="nome" placeholder="Buscar compras..." class="search-input" />
+        <input type="text" name="nome" placeholder="Buscar fornecedores..." class="search-input" />
         <button type="submit" class="search-button">
             <ion-icon name="search-outline"></ion-icon>
         </button>
@@ -22,7 +22,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FornecedorId)
+                @Html.DisplayNameFor(model => model.Fornecedor)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DataCompra)
@@ -38,7 +38,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.FornecedorId)
+                    @Html.DisplayFor(modelItem => item.Fornecedor.Nome)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DataCompra)

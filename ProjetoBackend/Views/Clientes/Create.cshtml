@@ -17,7 +17,7 @@
     <div class="row mb-3">
         <div class="col-12">
             <label asp-for="Nome" class="form-label fw-bold text-muted">Nome</label>
-            <input asp-for="Nome" class="form-control" placeholder="Digite o nome" />
+            <input asp-for="Nome" class="form-control" />
             <span asp-validation-for="Nome" class="text-danger"></span>
         </div>
     </div>
@@ -25,7 +25,7 @@
     <div class="row mb-3">
         <div class="col-12">
             <label asp-for="Email" class="form-label fw-bold text-muted">E-mail</label>
-            <input asp-for="Email" type="email" class="form-control" placeholder="Digite o e-mail" />
+            <input asp-for="Email" type="email" class="form-control" />
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
     </div>
@@ -33,12 +33,12 @@
     <div class="row mb-3">
         <div class="col-md-6">
             <label asp-for="CnpjCpf" class="form-label fw-bold text-muted">CPF</label>
-            <input asp-for="CnpjCpf" class="form-control" placeholder="Digite o CPF" />
+            <input asp-for="CnpjCpf" class="form-control" />
             <span asp-validation-for="CnpjCpf" class="text-danger"></span>
         </div>
         <div class="col-md-6">
             <label asp-for="Celular" class="form-label fw-bold text-muted">Celular</label>
-            <input asp-for="Celular" class="form-control" placeholder="Digite o número de celular" oninput="formatarTelefone(this)" />
+            <input asp-for="Celular" class="form-control" oninput="formatarTelefone(this)" />
             <span asp-validation-for="Celular" class="text-danger"></span>
         </div>
     </div>

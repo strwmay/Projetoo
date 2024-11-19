@@ -17,7 +17,7 @@
     <div class="row mb-3">
         <div class="col-12">
             <label asp-for="Nome" class="form-label fw-bold text-muted">Nome</label>
-            <input asp-for="Nome" class="form-control" placeholder="Digite o nome" />
+            <input asp-for="Nome" class="form-control" />
             <span asp-validation-for="Nome" class="text-danger"></span>
         </div>
     </div>
@@ -25,20 +25,20 @@
     <div class="row mb-3">
         <div class="col-6">
             <label asp-for="Preco" class="form-label fw-bold text-muted">Preço</label>
-            <input asp-for="Preco" type="email" class="form-control" placeholder="Digite o preço" />
+            <input asp-for="Preco" class="form-control" />
             <span asp-validation-for="Preco" class="text-danger"></span>
         </div>
         <div class="col-md-6">
             <label asp-for="Estoque" class="form-label fw-bold text-muted">Estoque</label>
-            <input asp-for="Estoque" class="form-control" placeholder="Digite o estoque" />
+            <input asp-for="Estoque" class="form-control" />
             <span asp-validation-for="Estoque" class="text-danger"></span>
         </div>
     </div>
 
     <div class="row mb-3">
         <div class="col-md-8">
-            <label asp-for="CategoriaId" class="form-label fw-bold text-muted">Categoria</label>
-            <input asp-for="CategoriaId" class="form-control" placeholder="Digite a categoria" />
+            <label asp-for="CategoriaId" class="form-label fw-bold text-muted"></label>
+            <select asp-for="CategoriaId" class="form-control" asp-items="ViewBag.CategoriaId"></select>
             <span asp-validation-for="CategoriaId" class="text-danger"></span>
         </div>
         <div class="col-md-4 d-flex align-items-end">
