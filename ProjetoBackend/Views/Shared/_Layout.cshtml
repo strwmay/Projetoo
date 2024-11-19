@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProjetoBackend</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ProjetoBackend.styles.css" asp-append-version="true" />
+
+    <style>
+        .nav-link, .navbar {
+            padding-bottom: 0 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3">
+            <div class="container-fluid">
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div style="margin-left:270px" class="navbar-collapse collapse d-sm-inline-flex justify-content-end align-items-end">
+
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+        <a class="navbar-brand position-absolute" style="width:300px;top:0;margin-top:10px" asp-area="" asp-controller="Home" asp-action="Index">
+            <img style="width:300px" src="~/img/logo.png" />
+        </a>
+    </header>
+
+    <div class="container">
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted center">
+        <div class="container text-light align-items-center text-center">
+            Girly Cosmetic Shop | Todos os direitos reservados - Copyright 2024 ©<a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/ionicons/ionicons.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

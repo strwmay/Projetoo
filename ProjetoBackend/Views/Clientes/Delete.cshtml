@@ -1,0 +1,43 @@
+﻿@model ProjetoBackend.Models.Cliente
+
+@{
+    ViewData["Title"] = "Deletar";
+}
+
+<div class="d-flex align-items-center mb-3">
+    <a asp-action="Index" class="btn btn-link text-dark">
+        <ion-icon name="chevron-back-outline" size="large"></ion-icon>
+    </a>
+    <h1>DELETAR CLIENTE</h1>
+</div>
+
+<div class="p-4">
+    <dl class="row mb-4">
+        <dt class="col-12 text-uppercase text-pink mb-1">Nome</dt>
+        <dd class="col-12 mb-3">@Html.DisplayFor(model => model.Nome)</dd>
+        <hr class="my-2" style="width: 50%; margin-left: 0;">
+
+        <dt class="col-12 text-uppercase text-pink mb-1">E-mail</dt>
+        <dd class="col-12 mb-3">@Html.DisplayFor(model => model.Email)</dd>
+        <hr class="my-2" style="width: 50%; margin-left: 0;">
+
+        <dt class="col-12 text-uppercase text-pink mb-1">CPF</dt>
+        <dd class="col-12 mb-3">@Html.DisplayFor(model => model.CnpjCpf)</dd>
+        <hr class="my-2" style="width: 50%; margin-left: 0;">
+
+        <dt class="col-12 text-uppercase text-pink mb-1">Celular</dt>
+        <dd class="col-12 mb-3">@Html.DisplayFor(model => model.Celular)</dd>
+        <hr class="my-2" style="width: 50%; margin-left: 0;">
+
+        <dt class="col-12 text-uppercase text-pink mb-1">Data de Nascimento</dt>
+        <dd class="col-12">@Html.DisplayFor(model => model.DataNascimento)</dd>
+    </dl>
+
+    <div class="d-flex flex-column align-items-start mt-4" style="width: 50%;">
+        <form asp-action="Delete" class="w-100">
+            <input type="hidden" asp-for="ClienteId" />
+            <button type="submit" class="btn btn-danger w-50" style="background-color: #f8a1b0; border-color: #f8a1b0; font-size: 1rem; padding: 0.5rem 0;">DELETAR</button>
+        </form>
+        <span class="text-muted small mt-2">*Ao executar essa ação não será possível revertê-la</span>
+    </div>
+</div>

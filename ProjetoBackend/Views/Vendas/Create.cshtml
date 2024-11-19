@@ -1,0 +1,53 @@
+﻿@model ProjetoBackend.Models.Venda
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="d-flex my-5">
+    <a asp-action="Index" class="btn btn-link text-dark">
+        <ion-icon name="chevron-back-outline" size="large"></ion-icon>
+    </a>
+    <h1>ADICIONAR VENDA</h1>
+</div>
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="row mb-3">
+        <div class="col-6">
+            <label asp-for="ClienteId" class="form-label fw-bold text-muted">Cliente</label>
+            <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.ClienteId"></select>
+            <span asp-validation-for="ClienteId" class="text-danger"></span>
+        </div>
+        <div class="col-6">
+            <label asp-for="DataVenda" class="form-label fw-bold text-muted">Data</label>
+            <input type="date" asp-for="DataVenda" class="form-control" />
+            <span asp-validation-for="DataVenda" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label asp-for="ValorTotal" class="form-label fw-bold text-muted">Valor Total</label>
+            <input asp-for="ValorTotal" class="form-control" placeholder="Digite o valor" />
+            <span asp-validation-for="ValorTotal" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100 fw-bold text-uppercase">Cadastrar</button>
+        </div>
+    </div>
+
+    <input type="hidden" asp-for="NotaFiscal" />
+</form>
+
+<div class="text-center mt-4">
+</div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+    }
+}

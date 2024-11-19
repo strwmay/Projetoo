@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ProjetoBackend.Models.Venda>
+
+@{
+    ViewData["Title"] = "Vendas";
+}
+
+<div class="search-container">
+    <h1>VENDAS</h1>
+    <form asp-action="Search" method="get" class="search-form">
+        <input type="text" name="nome" placeholder="Buscar vendas..." class="search-input" />
+        <button type="submit" class="search-button">
+            <ion-icon name="search-outline"></ion-icon>
+        </button>
+    </form>
+    <a asp-action="Create" class="create-button">
+        <ion-icon name="add-outline"></ion-icon>
+    </a>
+</div>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaFiscal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataVenda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorTotal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NotaFiscal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataVenda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorTotal)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.VendaId" class="btn align-items-center"><ion-icon name="create-outline"></ion-icon></a>
+                    <a asp-action="Delete" asp-route-id="@item.VendaId" class="btn align-items-center ms-2"><ion-icon name="trash-outline"></ion-icon></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

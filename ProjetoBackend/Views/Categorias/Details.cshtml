@@ -1,0 +1,25 @@
+﻿@model ProjetoBackend.Models.Categoria
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="d-flex my-5">
+    <a asp-action="Index" class="btn align-items-baseline"><ion-icon name="chevron-back-outline"></ion-icon></a>
+    <h1>EDITAR CATEGORIA</h1>
+</div>
+
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-8">
+            <label asp-for="Nome" class="control-label"></label>
+            <input asp-for="Nome" class="form-control" />
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100 fw-bold text-uppercase">Cadastrar</button>
+        </div>
+    </div>
+</form>

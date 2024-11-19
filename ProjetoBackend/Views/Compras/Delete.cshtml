@@ -1,0 +1,35 @@
+﻿@model ProjetoBackend.Models.Compra
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="d-flex align-items-center mb-3">
+    <a asp-action="Index" class="btn btn-link text-dark">
+        <ion-icon name="chevron-back-outline" size="large" color="primary"></ion-icon>
+    </a>
+    <h1>DELETAR COMPRA</h1>
+</div>
+
+<div class="p-4">
+    <dl class="row mb-4">
+        <dt class="col-12 text-uppercase text-pink mb-1">Fornecedor</dt>
+        <dd class="col-12 mb-3">@Html.DisplayFor(model => model.FornecedorId)</dd>
+        <hr class="my-2" style="width: 50%; margin-left: 0;">
+
+        <dt class="col-12 text-uppercase text-pink mb-1">Data</dt>
+        <dd class="col-12 mb-3">@Html.DisplayFor(model => model.DataCompra)</dd>
+        <hr class="my-2" style="width: 50%; margin-left: 0;">
+
+        <dt class="col-12 text-uppercase text-pink mb-1">Valor</dt>
+        <dd class="col-12 mb-3">@Html.DisplayFor(model => model.ValorTotal)</dd>
+    </dl>
+
+    <div class="d-flex flex-column align-items-start mt-4" style="width: 50%;">
+        <form asp-action="Delete" class="w-100">
+            <input type="hidden" asp-for="FornecedorId" />
+            <button type="submit" class="btn btn-danger w-50" style="background-color: #f8a1b0; border-color: #f8a1b0; font-size: 1rem; padding: 0.5rem 0;">DELETAR</button>
+        </form>
+        <span class="text-muted small mt-2">*Ao executar essa ação não será possível revertê-la</span>
+    </div>
+</div>

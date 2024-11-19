@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ProjetoBackend.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Categorias";
+}
+
+<div class="search-container">
+    <h1>CATEGORIAS</h1>
+    <form asp-action="Search" method="get" class="search-form">
+        <input type="text" name="nome" placeholder="Buscar categorias..." class="search-input" />
+        <button type="submit" class="search-button">
+            <ion-icon name="search-outline"></ion-icon>
+        </button>
+    </form>
+    <a asp-action="Create" class="create-button">
+        <ion-icon name="add-outline"></ion-icon>
+    </a>
+</div>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CategoriaId" class="btn align-items-center"><ion-icon name="create-outline"></ion-icon></a>
+                    <a asp-action="Delete" asp-route-id="@item.CategoriaId" class="btn align-items-center ms-2"><ion-icon name="trash-outline"></ion-icon></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

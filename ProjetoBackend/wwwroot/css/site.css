@@ -1,0 +1,142 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258CFB;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /*    margin-bottom: 60px;*/
+    background: #FFF5F8;
+}
+
+nav, footer {
+    background: #FDBACD !important;
+}
+
+/*HOVER DA NAV-BAR*/
+.nav-link, .navbar {
+    padding-bottom: 0 !important;
+}
+
+    .nav-link:hover {
+        color: #3A2727 !important;
+    }
+
+/*TÍTULO COM SEARCH E ADD*/
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #BEB1B3;
+}
+
+.search-input {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: #BEB1B3;
+    color: #fff;
+    font-size: 1rem;
+    width: 250px;
+}
+
+.search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background-color: #3A2727;
+    color: #fff;
+    cursor: pointer;
+}
+
+.create-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #3A2727;
+    border-radius: 10%;
+    background-color: #FFF5F8;
+    color: #3A2727;
+    cursor: pointer;
+}
+
+/*TABELA*/
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    color: #ffb6c1;
+}
+
+
+    .table thead th {
+        font-weight: bold;
+        text-align: left;
+        padding: 8px;
+        background-color: #fff5f8;
+        color: #ffb6c1;
+        border-bottom: 2px solid #ffb6c1;
+    }
+
+
+    .table tbody td {
+        padding: 8px;
+        border-bottom: 1px solid #ffb6c1;
+        text-align: left;
+        background-color: #fff5f8;
+    }
+
+
+        .table tbody td a {
+            color: #ffb6c1;
+            text-decoration: none;
+            margin: 0 4px;
+        }
+
+            .table tbody td a:hover {
+                color: #ff7f96;
+                text-decoration: underline;
+            }
+
+
+            .table tbody td a i {
+                font-size: 14px;
+            }
+
+
+    .table thead th, .table tbody td {
+        text-align: center;
+    }
+
+
+    .table tbody tr:hover {
+        background-color: #ffeff2;
+    }

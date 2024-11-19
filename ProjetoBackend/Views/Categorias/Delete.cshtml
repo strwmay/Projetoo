@@ -1,0 +1,27 @@
+﻿@model ProjetoBackend.Models.Categoria
+
+@{
+    ViewData["Title"] = "Deletar";
+}
+
+<div class="d-flex align-items-center mb-3">
+    <a asp-action="Index" class="btn btn-link text-dark">
+        <ion-icon name="chevron-back-outline" size="large"></ion-icon>
+    </a>
+    <h1>DELETAR CATEGORIA</h1>
+</div>
+
+<div class="p-4">
+    <dl class="row mb-4">
+        <dt class="col-12 text-uppercase text-pink mb-1">Nome</dt>
+        <dd class="col-12">@Html.DisplayFor(model => model.Nome)</dd>
+    </dl>
+
+    <div class="d-flex flex-column align-items-start mt-4" style="width: 50%;">
+        <form asp-action="Delete" class="w-100">
+            <input type="hidden" asp-for="CategoriaId" />
+            <button type="submit" class="btn btn-danger w-50" style="background-color: #f8a1b0; border-color: #f8a1b0; font-size: 1rem; padding: 0.5rem 0;">DELETAR</button>
+        </form>
+        <span class="text-muted small mt-2">*Ao executar essa ação não será possível revertê-la</span>
+    </div>
+</div>

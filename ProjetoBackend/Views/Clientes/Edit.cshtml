@@ -1,0 +1,76 @@
+﻿@model ProjetoBackend.Models.Cliente
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<div class="d-flex my-5">
+    <a asp-action="Index" class="btn btn-link text-dark">
+        <ion-icon name="chevron-back-outline" size="large"></ion-icon>
+    </a>
+    <h1>EDITAR CLIENTE</h1>
+</div>
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+    <input type="hidden" asp-for="ClienteId" />
+    <div class="row mb-3">
+        <div class="col-12">
+            <label asp-for="Nome" class="form-label fw-bold text-muted">Nome</label>
+            <input asp-for="Nome" class="form-control" placeholder="Digite o nome" />
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-9">
+            <label asp-for="Email" class="form-label fw-bold text-muted">E-mail</label>
+            <input asp-for="Email" type="email" class="form-control" placeholder="Digite o e-mail" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+
+        <div class="col">
+            <label asp-for="CadastroAtivo" class="form-label fw-bold text-muted"></label>
+            <select asp-for="CadastroAtivo" class="form-control" asp-items=" ViewBag.Ativo"></select>
+            <span asp-validation-for="CadastroAtivo" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label asp-for="CnpjCpf" class="form-label fw-bold text-muted">CPF</label>
+            <input asp-for="CnpjCpf" class="form-control" placeholder="Digite o CPF" />
+            <span asp-validation-for="CnpjCpf" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Celular" class="form-label fw-bold text-muted">Celular</label>
+            <input asp-for="Celular" class="form-control" placeholder="Digite o número de celular" oninput="formatarTelefone(this)" />
+            <span asp-validation-for="Celular" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-8">
+            <label asp-for="DataNascimento" class="form-label fw-bold text-muted">Data de Nascimento</label>
+            <input type="date" asp-for="DataNascimento" class="form-control" />
+            <span asp-validation-for="DataNascimento" class="text-danger"></span>
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100 fw-bold text-uppercase">Cadastrar</button>
+        </div>
+    </div>
+
+    <input type="hidden" asp-for="DataCadastro" />
+
+</form>
+
+<div class="text-center mt-4">
+</div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
