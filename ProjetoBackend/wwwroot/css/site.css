@@ -165,3 +165,93 @@ nav, footer {
 .text-muted {
     color: #FDBACD !important;
 }
+
+
+
+.login-container, .register-container {
+    background-color: #ffecf2;
+    padding: 20px;
+    border-radius: 0px;
+    margin-top: 100px;
+}
+
+    .login-container h2 {
+        color: #f48fb1;
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+/* Inputs */
+.input-pink {
+    border: 1px solid #3A2727;
+    border-radius: 20px;
+    height: 45px;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+    .input-pink:focus {
+        outline: none;
+        border-color: #f48fb1;
+        box-shadow: 0 0 4px rgba(244, 143, 177, 0.5);
+    }
+
+/* Botões */
+.btn-pink {
+    background-color: #FDBACD;
+    border: none;
+    color: #FFF5F8;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 42px;
+}
+
+    .btn-pink:hover {
+        background-color: #FFA6BF;
+        color: #FFF5F8
+    }
+
+.btn-brown {
+    background-color: #897779;
+    border: none;
+    color: #FFF5F8;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 42px;
+}
+
+    .btn-brown:hover {
+        background-color: #7C6568;
+        color: #FFF5F8
+    }
+
+/* Links */
+.link-pink {
+    color: #f48fb1;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+    .link-pink:hover {
+        text-decoration: underline;
+    }
+
+/* Divisor */
+.divider {
+    position: center;
+    text-align: center;
+    color: #3A2727;
+    font-size: 14px;
+}
+
+    .divider:before,
+    .divider:after {
+        width: 40%;
+        border-bottom: 1px solid #3A2727;
+        margin: 0 5px;
+    }
+
+.text {
+    color: #FDBACD;
+}
