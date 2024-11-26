@@ -255,3 +255,11 @@ nav, footer {
 .text {
     color: #FDBACD;
 }
+
+.nav-link {
+    color: #FDBACD;
+}
+
+.active {
+    background-color: #FDBACD !important;
+}

@@ -22,6 +22,19 @@ namespace ProjetoBackend.Controllers
             return View(produtos.OrderBy(p => p.Nome));
         }
 
+        // GET: Clientes/Search?nome={clientName} (New Search Action)
+        public async Task<IActionResult> Search(string nome)
+        {
+            if (string.IsNullOrEmpty(nome)) // Handle empty search term
+            {
+                return RedirectToAction(nameof(Index)); // Redirect to main Index
+            }
+
+            var produtos = await _context.Produtos.Where(c => c.Nome.Contains(nome)).ToListAsync();
+            return View("Index", produtos.OrderBy(c => c.Nome)); // Reuse the existing Index view
+        }
+
+
         // GET: Produtos/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
