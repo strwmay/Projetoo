@@ -260,6 +260,12 @@ nav, footer {
     color: #FDBACD;
 }
 
+
 .active {
     background-color: #FDBACD !important;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Evita espaços extras entre as células */
 }

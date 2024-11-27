@@ -15,6 +15,18 @@ namespace ProjetoBackend.Controllers
             _context = context;
         }
 
+        // GET: Fornecedores/Search?nome={fornecedorName} (New Search Action)
+        public async Task<IActionResult> Search(string nome)
+        {
+            if (string.IsNullOrEmpty(nome)) // Handle empty search term
+            {
+                return RedirectToAction(nameof(Index)); // Redirect to main Index
+            }
+
+            var vendas = await _context.Vendas.Include(c => c.Cliente).Where(c => c.NotaFiscal.ToString().Contains(nome)).ToListAsync();
+            return View("Index", vendas.OrderBy(c => c.NotaFiscal)); // Reuse the existing Index view
+        }
+
         // GET: Vendas
         public async Task<IActionResult> Index()
         {
